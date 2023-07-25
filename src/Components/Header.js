@@ -18,7 +18,7 @@ const Header = ({ cartItems }) => {
 
         {/* Collapsible menu items */}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="justify-content-center flex-grow-1 pe-3 me-auto" >
             {/* Add your navigation links here */}
             <Nav.Link as={Link} to="/">
               Home
@@ -32,7 +32,6 @@ const Header = ({ cartItems }) => {
             <Nav.Link as={Link} to="/cart">
               Cart: {cartItemCount}
             </Nav.Link>
-            {/* Add more links as needed */}
           </Nav>
         </Navbar.Collapse>
       </Container>
