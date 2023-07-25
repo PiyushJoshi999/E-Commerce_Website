@@ -1,13 +1,25 @@
 import React from 'react';
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, removeFromCart, updateQuantity, handlePurchase }) => {
   const calculateTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0);
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
+
+  const handleRemoveFromCart = (item) => {
+    removeFromCart(item);
+  };
+
+  const handleQuantityChange = (item, quantity) => {
+    updateQuantity(item, quantity);
+  };
+
+  const handlePurchaseClick = () => {
+     handlePurchase();
+  }
 
   return (
     <div>
-      <h4>Cart</h4>
+      <h2>Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
@@ -16,11 +28,19 @@ const Cart = ({ cartItems }) => {
             <div key={index}>
               <p>
                 {item.title} - ${item.price}
+                <input
+                  type="number"
+                  min="1"
+                  placeholder='Quantity'
+                  value={item.quantity}
+                  onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))}
+                />
+                <button onClick={() => handleRemoveFromCart(item)}>Remove</button>
               </p>
             </div>
           ))}
           <p>Total: ${calculateTotalPrice()}</p>
-          {/* Add buttons or icons for removing items from the cart */}
+          <button onClick={handlePurchaseClick}>Purchase</button>
         </div>
       )}
     </div>
