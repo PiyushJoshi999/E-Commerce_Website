@@ -61,7 +61,7 @@ const ContactUs = () => {
                     {submitted ? (
                         <p>Thanks for contacting us.</p>
                     ) : (
-                        <Form onSubmit={formSubmitHandler}>
+                        <Form onSubmit={formSubmitHandler} a >
                             <Form.Group controlId="name">
                                 <Form.Label>Name:</Form.Label>
                                 <Form.Control

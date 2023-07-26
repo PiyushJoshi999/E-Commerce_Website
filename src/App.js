@@ -7,6 +7,7 @@ import Cart from './Components/Cart';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import ContactUs from './Pages/ContactUs';
+//import ProductDetails from './Components/ProductDetails';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
