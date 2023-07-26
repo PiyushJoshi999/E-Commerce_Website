@@ -32,6 +32,9 @@ const Header = ({ cartItems }) => {
             <Nav.Link as={Link} to="/cart">
               Cart: {cartItemCount}
             </Nav.Link>
+            <Nav.Link as={Link} to="/contactus">
+            Contact Us
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

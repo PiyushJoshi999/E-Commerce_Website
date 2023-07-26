@@ -6,6 +6,7 @@ import ProductList from './Components/ProductList';
 import Cart from './Components/Cart';
 import Home from './Pages/Home';
 import About from './Pages/About';
+import ContactUs from './Pages/ContactUs';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -112,6 +113,7 @@ const App = () => {
             )}
           </div>} />
           <Route path="/about" element={<About />} />
+          <Route path="/contactus" element={<ContactUs />} />
         </Routes>
       </div>
     </Router>
