@@ -7,6 +7,7 @@ import Cart from './Components/Cart';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import ContactUs from './Pages/ContactUs';
+import Login from './Components/Login';
 //import ProductDetails from './Components/ProductDetails';
 
 const App = () => {
@@ -97,6 +98,7 @@ const App = () => {
       <div>
         <Header cartItems={cartItems} />
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<ProductList products={productsArr} addToCart={handleAddToCart} />} />
           <Route path="/cart" element={<div>
@@ -113,6 +115,7 @@ const App = () => {
               </Alert>
             )}
           </div>} />
+
           <Route path="/about" element={<About />} />
           <Route path="/contactus" element={<ContactUs />} />
         </Routes>
